@@ -2,6 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Import CSS
+import './PizzaForm.css'
+
 //----------------  PizzaForm Component  ----------------//
 const PizzaForm = (props) => {
     // Set values to props
@@ -28,12 +31,12 @@ const PizzaForm = (props) => {
 
     // Render component
     return (
-        <div>
+        <div className='form-page'>
             <h2>Build Your Own Pizza</h2>
             <form id='pizza-form' onSubmit={onSubmit}>
                 <div className='form-group inputs'>
                 <label className='choice-title'>
-                        Name
+                        <h3>Name</h3>
                         <span className='small-text'>Required.</span>
                     </label>
                     <input
@@ -45,7 +48,7 @@ const PizzaForm = (props) => {
                     />
 
                     <label className='choice-title'>
-                        Choice of Size
+                    <h3>Choice of Size</h3>
                         <span className='small-text'>Required.</span>
                     </label>
                     <select
@@ -61,72 +64,92 @@ const PizzaForm = (props) => {
                     
 
                     <label className='choice-title'>
-                        Choice of Sauce
+                        <h3>Choice of Sauce</h3>
                         <span className='small-text'>Required.</span>
                     </label>
-                    <input
-                        id='sauce-radio'
-                        type='radio'
-                        name='sauce'
-                        value='Original Red'
-                        checked={values.sauce === 'Original Red'}
-                        onChange={onChange}/>
-                    <label>Original Red</label>
-                    <input
-                        id='sauce-radio'
-                        type='radio'
-                        name='sauce'
-                        value='Garlic Ranch'
-                        checked={values.sauce === 'Garlic Ranch'}
-                        onChange={onChange}/>
-                    <label>Garlic Ranch</label>
-                    <input
-                        id='sauce-radio'
-                        type='radio'
-                        name='sauce'
-                        value='BBQ Sauce'
-                        checked={values.sauce === 'BBQ Sauce'}
-                        onChange={onChange}/>
-                    <label>BBQ Sauce</label>
-                    <input
-                        id='sauce-radio'
-                        type='radio'
-                        name='sauce'
-                        value='Spinach Alfredo'
-                        checked={values.sauce === 'Spinach Alfredo'}
-                        onChange={onChange}/>
-                    <label>Spinach Alfredo</label>
+                    <div className='checkable-inputs'>
+                        <div className='radio-check'>
+                            <input 
+                                id='sauce-radio'
+                                type='radio'
+                                name='sauce'
+                                value='Original Red'
+                                checked={values.sauce === 'Original Red'}
+                                onChange={onChange}/>
+                            <label>Original Red</label>
+                        </div>
+                        <div className='radio-check'>
+                            <input
+                                id='sauce-radio'
+                                type='radio'
+                                name='sauce'
+                                value='Garlic Ranch'
+                                checked={values.sauce === 'Garlic Ranch'}
+                                onChange={onChange}/>
+                            <label>Garlic Ranch</label>
+                        </div>
+                        <div className='radio-check'>
+                            <input
+                                id='sauce-radio'
+                                type='radio'
+                                name='sauce'
+                                value='BBQ Sauce'
+                                checked={values.sauce === 'BBQ Sauce'}
+                                onChange={onChange}/>
+                            <label>BBQ Sauce</label>
+                        </div>
+                        <div className='radio-check'>
+                            <input
+                                id='sauce-radio'
+                                type='radio'
+                                name='sauce'
+                                value='Spinach Alfredo'
+                                checked={values.sauce === 'Spinach Alfredo'}
+                                onChange={onChange}/>
+                            <label>Spinach Alfredo</label>
+                        </div>
+                    </div>
 
                     <label className='choice-title'>
-                        Add Toppings
+                        <h3>Add Toppings</h3>
                         <span className='small-text'>Choose up to 10.</span>
                     </label>
-                    <input
-                        type='checkbox'
-                        name='pepperoni'
-                        checked={values.pepperoni}
-                        onChange={onChange}/>
-                    <label>Pepperoni</label>
-                    <input
-                        type='checkbox'
-                        name='sausage'
-                        checked={values.sausage}
-                        onChange={onChange}/>
-                    <label>Sausage</label>
-                    <input
-                        type='checkbox'
-                        name='canBacon'
-                        checked={values.canBacon}
-                        onChange={onChange}/>
-                    <label>Canadian Bacon</label>
-                    <input
-                        type='checkbox'
-                        name='onions'
-                        checked={values.onions}
-                        onChange={onChange}/>
-                    <label>Onions</label>
+                    <div className='checkable-inputs'>
+                        <div className='radio-check'>
+                            <input
+                                type='checkbox'
+                                name='pepperoni'
+                                checked={values.pepperoni}
+                                onChange={onChange}/>
+                            <label>Pepperoni</label>
+                        </div>
+                        <div className='radio-check'>
+                            <input
+                                type='checkbox'
+                                name='sausage'
+                                checked={values.sausage}
+                                onChange={onChange}/>
+                            <label>Sausage</label>
+                        </div>
+                        <div className='radio-check'>
+                            <input
+                                type='checkbox'
+                                name='canBacon'
+                                checked={values.canBacon}
+                                onChange={onChange}/>
+                            <label>Canadian Bacon</label>
+                        </div>
+                        <div className='radio-check'>
+                            <input
+                                type='checkbox'
+                                name='onions'
+                                checked={values.onions}
+                                onChange={onChange}/>
+                            <label>Onions</label>
+                        </div>
+                    </div>
 
-                    <label className='choice-title'>Special Instructions</label>
+                    <label className='choice-title'><h3>Special Instructions</h3></label>
                     <input
                         id='special-text'
                         name='special'

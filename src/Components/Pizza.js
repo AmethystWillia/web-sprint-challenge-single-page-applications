@@ -6,7 +6,7 @@ const Pizza = () => {
     // Render component
     return (
         <div>
-            <h1>Test</h1>
+            <h1>You Ordered Pizza!!</h1>
         </div>
     )
 };

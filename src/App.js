@@ -36,13 +36,14 @@ const initialDisabled = true;
 // Create empty array for initial pizzas
 const initialPizzas = [];
 
-//----------------  Parent Component  ----------------//
+// Parent Component
 const App = () => {
   //----------------  Setting States  ----------------//
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialErrorValues);
   const [disabled, setDisabled] = useState(initialDisabled);
   const [pizzas, setPizzas] = useState(initialPizzas);
+  const [hidden, setHidden] = useState(false);
 
   //----------------  Creating Helpers  ----------------//
   // Check form to see if inputs are valid
@@ -71,6 +72,13 @@ const App = () => {
     };
 
   //----------------  Event Handlers  ----------------//
+  // Toggle hidden
+  const toggleHidden = () => {
+    setHidden(!hidden);
+  };
+  const reveal = () => {
+    setHidden(false);
+  }
 
   // Input-change event handler
   const inputChange = (name, value) => {
@@ -116,21 +124,23 @@ const App = () => {
           <h1>Lambda Eats</h1>
         </div>
         <nav>
-          <Link to='/' className='nav-link'>Home</Link>
+          <Link to='/' className='nav-link' onClick={reveal}>Home</Link>
           <Link to='/' className='nav-link'>Help</Link>
         </nav>
       </header>
 
-      <section className='to-form'>
+      {hidden === true ? '' :
+        <section className='to-form'>
         <div className='background-img'>
           <div className='to-form content'>
             <h2>Your favorite food, delivered while coding</h2>
             <Link to='/pizza'>
-              <button id='order-pizza'>Pizza?</button>
+              <button id='order-pizza' onClick={toggleHidden}>Pizza?</button>
             </Link>
           </div>
         </div>
-      </section>
+       </section>
+      }
 
       <Switch>
         <Route path='/pizza/complete'>
