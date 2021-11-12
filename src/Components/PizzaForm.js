@@ -27,7 +27,7 @@ const PizzaForm = (props) => {
 
     // Render component
     return (
-        <form id='pizza-form'>
+        <form id='pizza-form' onSubmit={onSubmit}>
             <div className='form-group inputs'>
             <label className='choice-title'>
                     Name
@@ -125,6 +125,7 @@ const PizzaForm = (props) => {
 
                 <label className='choice-title'>Special Instructions</label>
                 <input
+                    id='special-text'
                     name='special'
                     type='text'
                     value={values.special}
@@ -139,7 +140,7 @@ const PizzaForm = (props) => {
                     <p>{errors.sauce}</p>
                 </div>
 
-                <button id='submitBtn' disabled={disabled}>Add to Order</button>
+                <button id='order-button' disabled={disabled}>Add to Order</button>
             </div>
         </form>
     )
