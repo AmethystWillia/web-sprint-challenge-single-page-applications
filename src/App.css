@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+/* Colors */
+/*
+CG Blue: 0081a7
+Verdigris: 00afb9
+Light Yellow: fdfcdc
+Peach Puff: fed9bf
+Bittersweet: f07167
+*/
+
+/* General Styles */
+h1 {
+  font-size: 4.5rem;
+  color: #0081a7;
+}
+h2 {
+  font-size: 3.8rem;
+  color: #00afb9;
+}
+h3 {
+  font-size: 2.4rem;
+}
+body {
+  font-size: 1.6rem;
+  color: #191d1f;
+}
+a {
+  text-decoration: none;
+  color: #f07167;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header Styles */
+header {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: space-between;
   align-items: center;
+  padding: 1%;
+  background-color: #fdfcdc;
+}
+
+nav {
+  width: 20%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-right: 3%;
+}
+
+.nav-link {
+  font-size: 2.4rem;
+  padding: 1% 2%;
+  margin: 1%;
+
+  width: 45%;
+  background-color: #fed9bf;
+  text-align: center;
+
+  border: 2px solid #f07167;
+  border-radius: 10px;
+}
+.nav-link:hover {
+  background-color: #6ce7ee;
+  color: #0081a7;
+  border: 2px solid #0081a7;
+}
+
+/* Pizza Order Styles */
+.to-form {
+  display: flex;
+  flex-flow: column wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.background-img {
+  width: 100%;  
+  background-image: url('./Assets/Pizza.jpg');
+  min-height: 70vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.to-form .content {
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  padding: 50px 0;
+}
+
+#order-pizza {
+  margin-top: 10%;
+
+  background-color: #6ce7ee;
+  color: #0081a7;
+  border: 3px solid #0081a7;
+  border-radius: 10px;
+
+  font-size: 3.6rem;
+  width: 200px;
+  height: 70px;
+}
+
+/* The rest of it */
+.components {
+  background-color: #fdfcdc;
 }

@@ -4,6 +4,9 @@ import { Route, Switch, Link } from 'react-router-dom';
 import * as yup from 'yup';
 import axios from 'axios';
 
+// Imort CSS
+import './App.css';
+
 // Import components
 import schema from './Validation/formSchema';
 import PizzaForm from "./Components/PizzaForm";
@@ -109,31 +112,39 @@ const App = () => {
   return (
     <div>
       <header className='header'>
-        <h1>Lambda Eats</h1>
+        <div>
+          <h1>Lambda Eats</h1>
+        </div>
         <nav>
-          <a href=''>Home</a>
-          <a href=''>Help</a>
+          <Link to='/' className='nav-link'>Home</Link>
+          <Link to='/' className='nav-link'>Help</Link>
         </nav>
       </header>
 
-      <div className='to-form'>
-        <div className='background-img'></div>
-        <Link to={'/pizza'}>
-          <button id='order-pizza'>Pizza?</button>
-        </Link>
-      </div>
+      <section className='to-form'>
+        <div className='background-img'>
+          <div className='to-form content'>
+            <h2>Your favorite food, delivered while coding</h2>
+            <Link to='/pizza'>
+              <button id='order-pizza'>Pizza?</button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <Switch>
-        <Route path='/pizza'>
-          <PizzaForm
-            values={formValues}
-            change={inputChange}
-            submit={formSubmit}
-            disabled={disabled}
-            errors={formErrors}
-          />
-        </Route>
-        <Pizza />
+        <Route path='/pizza/complete'>
+            <Pizza />
+          </Route>
+          <Route path='/pizza'>
+            <PizzaForm
+              values={formValues}
+              change={inputChange}
+              submit={formSubmit}
+              disabled={disabled}
+              errors={formErrors}
+            />
+          </Route>
       </Switch>
     </div>
   );
