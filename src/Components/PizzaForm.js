@@ -40,6 +40,7 @@ const PizzaForm = (props) => {
                     value={values.name}
                     onChange={onChange}
                 />
+
                 <label className='choice-title'>
                     Choice of Size
                     <span className='small-text'>Required.</span>
@@ -121,6 +122,24 @@ const PizzaForm = (props) => {
                     checked={values.onions}
                     onChange={onChange}/>
                 <label>Onions</label>
+
+                <label className='choice-title'>Special Instructions</label>
+                <input
+                    name='special'
+                    type='text'
+                    value={values.special}
+                    onChange={onChange}
+                />
+            </div>
+
+            <div className='form-group submit'>
+                <div className='errors'>
+                    <p>{errors.name}</p>
+                    <p>{errors.size}</p>
+                    <p>{errors.sauce}</p>
+                </div>
+
+                <button id='submitBtn' disabled={disabled}>Add to Order</button>
             </div>
         </form>
     )
